@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<html>
+<head>
+	<title>Mobility in the Netherlands</title>
+</head>
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/nvd3/1.8.1/nv.d3.min.css">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+<body>
+	<div id="chart-wrapper">
+		<div class="btn-group" role="group">
+		  <button type="button" class="btn btn-sm btn-secondary active" onclick="provinceTime()">Province</button>
+		  <button type="button" class="btn btn-sm btn-secondary">Population density</button>
+		  <button type="button" class="btn btn-sm btn-secondary">Disposable income</button>
+		  <button type="button" class="btn btn-sm btn-secondary">Background</button>
+		  <button type="button" class="btn btn-sm btn-secondary">Gender</button>
+		</div>
+
+		<button type="button" class="btn btn-sm btn-secondary" onclick="provinceDistance()">Distance</button>
+
+
+	  <h4 id="chart-title"></h4>
+	</div>
+
+	</div>
+	<div id="chart"><svg></svg></div>
+</body>
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.4.11/d3.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/nvd3/1.8.1/nv.d3.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+
+<script src="js/province-time.js"></script>
+<script src="js/province-distance.js"></script>
+
+</html>

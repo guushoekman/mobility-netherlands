@@ -1,11 +1,46 @@
-.bar {
-  fill: steelblue;
+@import url('https://fonts.googleapis.com/css?family=Ubuntu');
+
+body {
+	font-family: 'Ubuntu', sans-serif;
 }
 
-.axis path {
-  display: none;
+.nv-axis.nv-x .tick line {
+    display:none;
 }
 
-svg {
-	width: 100%;
+.nvd3 text {
+	font-family: 'Ubuntu', sans-serif;
+}
+
+.nv-axislabel {
+	font-style: italic !important;
+}
+
+#chart {
+	height: 80vh;
+}
+
+#chart-wrapper {
+	padding: 10px;
+	margin-left: 50px;
+}
+
+#chart-title {
+	margin-bottom: -30px;
+	margin-top: 15px;
+}
+
+rect {
+	fill-opacity: 1;
+}
+
+.nvtooltip {
+	background: rgba(255,255,255,.75);
+	border: 0px solid #ccc;
+	border-radius: 0px;
+	font-family: 'Ubuntu', sans-serif;
+}
+
+.nvtooltip table td.legend-color-guide div {
+	border: none;
 }
