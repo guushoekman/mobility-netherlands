@@ -2,11 +2,9 @@ function provinceTime() {
 
 	var chart = nv.models.multiBarChart()
 		chart.stacked(true)
-		chart.showControls(false)
 		chart.reduceXTicks(false)
 		chart.yAxis.axisLabel('Average number of minutes per day')
 		chart.yAxis.axisLabelDistance(-10);
-		chart.xAxis.axisLabel('Province')
 	;
 
 	d3.select('#chart svg').datum([
@@ -173,5 +171,5 @@ function provinceTime() {
 	
 	]).transition().duration(500).call(chart);
 
-	$('#chart-title').text('Minutes per day per province');
+	$('#chart-title').html('<h4>Minutes per day by province <button onclick="provinceDistance()" type="button" class="btn btn-sm btn-secondary"><i class="fa fa-road" aria-hidden="true"></i> Distance</button></h4>');
 }

@@ -2,11 +2,9 @@ function provinceDistance() {
 
 	var chart = nv.models.multiBarChart()
 		chart.stacked(true)
-		chart.showControls(false)
 		chart.reduceXTicks(false)
 		chart.yAxis.axisLabel('Average number of kilometres per day')
 		chart.yAxis.axisLabelDistance(-10);
-		chart.xAxis.axisLabel('Province')
 	;
 
 	d3.select('#chart svg').datum([
@@ -173,5 +171,5 @@ function provinceDistance() {
 	
 	]).transition().duration(500).call(chart);
 
-	$('#chart-title').text('Kilometres per day by province <button type="button" class="btn btn-sm btn-secondary">Gender</button>');
+	$('#chart-title').html('<h4>Kilometres per day by province <button onclick="provinceTime()" type="button" class="btn btn-sm btn-secondary"><i class="fa fa-clock-o" aria-hidden="true"></i> Time</button></h4>');
 }

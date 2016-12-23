@@ -17,16 +17,16 @@ body {
 }
 
 #chart {
-	height: 80vh;
+	height: 75vh;
 }
 
-#chart-wrapper {
+.chart-wrapper {
 	padding: 10px;
 	margin-left: 50px;
 }
 
 #chart-title {
-	margin-bottom: -30px;
+	margin-bottom: 0px;
 	margin-top: 15px;
 }
 
