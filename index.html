@@ -12,14 +12,16 @@
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 <body>
 	<div class="chart-wrapper">
-		<div class="btn-group" role="group">
-		  <button type="button" class="btn btn-sm btn-secondary" onclick="provinceTime()"><i class="fa fa-circle-thin" aria-hidden="true"></i> Province</button>
-		  <button type="button" class="btn btn-sm btn-secondary disabled" onclick="densityTime()"><i class="fa fa-home" aria-hidden="true"></i> Population density</button>
-		  <button type="button" class="btn btn-sm btn-secondary" onclick="disposableIncomeTime()"><i class="fa fa-money" aria-hidden="true"></i> Disposable income</button>
-		  <button type="button" class="btn btn-sm btn-secondary disabled" onclick="originTime()"><i class="fa fa-flag" aria-hidden="true"></i> Origin</button>
+		<div class="btn-group demographics-menu" role="group">
+		  <button type="button" class="btn btn-sm btn-secondary active" onclick="provinceTime()"><i class="fa fa-circle-thin" aria-hidden="true"></i> Province</button>
+		  <button type="button" class="btn btn-sm btn-secondary" onclick="densityTime()"><i class="fa fa-home" aria-hidden="true"></i> Population density</button>
+		  <button type="button" class="btn btn-sm btn-secondary" onclick="incomeTime()"><i class="fa fa-money" aria-hidden="true"></i> Disposable income</button>
+		  <button type="button" class="btn btn-sm btn-secondary" onclick="originTime()"><i class="fa fa-flag" aria-hidden="true"></i> Origin</button>
 		  <button type="button" class="btn btn-sm btn-secondary" onclick="genderTime()"><i class="fa fa-venus-mars" aria-hidden="true"></i> Gender</button>
 		  <button type="button" class="btn btn-sm btn-secondary" onclick="ageTime()"><i class="fa fa-child" aria-hidden="true"></i> Age</button>
-		  <button type="button" class="btn btn-sm btn-secondary disabled" onclick="purposeTime()"><i class="fa fa-dot-circle-o" aria-hidden="true"></i> Purpose</button>
+		  <button type="button" class="btn btn-sm btn-secondary" onclick="educationTime()"><i class="fa fa-mortar-board" aria-hidden="true"></i> Education</button>
+		  <button type="button" class="btn btn-sm btn-secondary" onclick="purposeTime()"><i class="fa fa-dot-circle-o" aria-hidden="true"></i> Purpose</button>
+		  <button type="button" class="btn btn-sm btn-secondary" onclick="monthTime()"><i class="fa fa-calendar" aria-hidden="true"></i> Month</button>
 		</div>
 	  <h4 id="chart-title"></h4>
 	</div>
@@ -33,13 +35,32 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/nvd3/1.8.1/nv.d3.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
 
+<script>
+	$( ".demographics-menu .btn" ).click(function() {
+		$( ".demographics-menu .btn" ).removeClass("active");
+		$(this).addClass("active");
+	});
+</script>
+
 <script src="js/province-time.js"></script>
 <script src="js/province-distance.js"></script>
-<script src="js/disposable-income-time.js"></script>
-<script src="js/disposable-income-distance.js"></script>
+<script src="js/income-time.js"></script>
+<script src="js/income-distance.js"></script>
 <script src="js/gender-time.js"></script>
 <script src="js/gender-distance.js"></script>
 <script src="js/age-time.js"></script>
 <script src="js/age-distance.js"></script>
+<script src="js/origin-time.js"></script>
+<script src="js/origin-distance.js"></script>
+<script src="js/education-time.js"></script>
+<script src="js/education-distance.js"></script>
+<script src="js/density-time.js"></script>
+<script src="js/density-distance.js"></script>
+<script src="js/purpose-time.js"></script>
+<script src="js/purpose-distance.js"></script>
+<script src="js/month-time.js"></script>
+<script src="js/month-distance.js"></script>
+
+<script>provinceTime()</script>
 
 </html>

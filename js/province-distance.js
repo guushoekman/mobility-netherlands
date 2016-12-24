@@ -171,5 +171,5 @@ function provinceDistance() {
 	
 	]).transition().duration(500).call(chart);
 
-	$('#chart-title').html('<h4>Kilometres per day by province <button onclick="provinceTime()" type="button" class="btn btn-sm btn-secondary"><i class="fa fa-clock-o" aria-hidden="true"></i> Time</button></h4>');
+	$('#chart-title').html('<h4>Kilometres per day by province <div class="btn-group" role="group"><button onclick="provinceTime()" type="button" class="btn btn-sm btn-secondary"><i class="fa fa-clock-o" aria-hidden="true"></i> Time</button><button onclick="provinceDistance()" type="button" class="btn btn-sm btn-secondary active"><i class="fa fa-road" aria-hidden="true"></i> Distance</button></div></h4>');
 }
