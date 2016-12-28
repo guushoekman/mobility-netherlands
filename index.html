@@ -9,25 +9,43 @@
 	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/nvd3/1.8.1/nv.d3.min.css">
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
 	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css??">
 <body>
-	<div class="chart-wrapper">
-		<div class="btn-group demographics-menu" role="group">
-		  <button type="button" class="btn btn-sm btn-secondary active" onclick="provinceTime()"><i class="fa fa-circle-thin" aria-hidden="true"></i> Province</button>
-		  <button type="button" class="btn btn-sm btn-secondary" onclick="densityTime()"><i class="fa fa-home" aria-hidden="true"></i> Population density</button>
-		  <button type="button" class="btn btn-sm btn-secondary" onclick="incomeTime()"><i class="fa fa-money" aria-hidden="true"></i> Disposable income</button>
-		  <button type="button" class="btn btn-sm btn-secondary" onclick="originTime()"><i class="fa fa-flag" aria-hidden="true"></i> Origin</button>
-		  <button type="button" class="btn btn-sm btn-secondary" onclick="genderTime()"><i class="fa fa-venus-mars" aria-hidden="true"></i> Gender</button>
-		  <button type="button" class="btn btn-sm btn-secondary" onclick="ageTime()"><i class="fa fa-child" aria-hidden="true"></i> Age</button>
-		  <button type="button" class="btn btn-sm btn-secondary" onclick="educationTime()"><i class="fa fa-mortar-board" aria-hidden="true"></i> Education</button>
-		  <button type="button" class="btn btn-sm btn-secondary" onclick="purposeTime()"><i class="fa fa-dot-circle-o" aria-hidden="true"></i> Purpose</button>
-		  <button type="button" class="btn btn-sm btn-secondary" onclick="monthTime()"><i class="fa fa-calendar" aria-hidden="true"></i> Month</button>
+	<div id="header">
+		<div class="chart-wrapper">
+			<h1 class="no-margin-bottom">Mobility in the Netherlands</h1>
 		</div>
-	  <h4 id="chart-title"></h4>
 	</div>
-	<div id="chart"><svg></svg></div>
-	<div class="chart-wrapper">
-		<p id="chart-note"></p>
+	<div id="chart-content">
+		<div class="chart-wrapper">
+			<i id="help-button" class="fa fa-2x fa-question-circle pull-right" aria-hidden="true"></i>
+			<div class="btn-group demographics-menu" role="group">
+			  <button type="button" class="btn btn-sm btn-secondary active" onclick="provinceTime()"><i class="fa fa-circle-thin" aria-hidden="true"></i> Province</button>
+			  <button type="button" class="btn btn-sm btn-secondary" onclick="densityTime()"><i class="fa fa-home" aria-hidden="true"></i> Population density</button>
+			  <button type="button" class="btn btn-sm btn-secondary" onclick="incomeTime()"><i class="fa fa-money" aria-hidden="true"></i> Disposable income</button>
+			  <button type="button" class="btn btn-sm btn-secondary" onclick="originTime()"><i class="fa fa-flag" aria-hidden="true"></i> Origin</button>
+			  <button type="button" class="btn btn-sm btn-secondary" onclick="genderTime()"><i class="fa fa-venus-mars" aria-hidden="true"></i> Gender</button>
+			  <button type="button" class="btn btn-sm btn-secondary" onclick="ageTime()"><i class="fa fa-child" aria-hidden="true"></i> Age</button>
+			  <button type="button" class="btn btn-sm btn-secondary" onclick="educationTime()"><i class="fa fa-mortar-board" aria-hidden="true"></i> Education</button>
+			  <button type="button" class="btn btn-sm btn-secondary" onclick="purposeTime()"><i class="fa fa-dot-circle-o" aria-hidden="true"></i> Purpose</button>
+			  <button type="button" class="btn btn-sm btn-secondary" onclick="monthTime()"><i class="fa fa-calendar" aria-hidden="true"></i> Month</button>
+			</div>
+		  <div id="chart-title"></div>
+		  <div style="opacity: 0;" class="help">
+			  <div class="pull-left"><i class="fa fa-arrow-down" aria-hidden="true"></i> Click to re-arrange bars</div>
+			  <div class="pull-right"><i class="fa fa-arrow-down" aria-hidden="true"></i> Click to add/remove mode of transport. Double click to remove the rest</div>
+			  <div class="scroll-down btn-sm btn btn-secondary"><i class="fa fa-arrow-down" aria-hidden="true"></i> Scroll down for notes, definitions, and sources</div>
+		  </div>
+		</div>
+		<div id="chart">
+			<svg></svg>
+		</div>
+		<div class="chart-wrapper" id="chart-definitions">
+			<h3>Notes and definitons</h3>
+			<p>
+				Data on moped, train, bus/tram/metro, and other forms of transport usage is missing for a number of provinces.
+			</p>
+		</div>
 	</div>
 </body>
 <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
@@ -40,6 +58,15 @@
 		$( ".demographics-menu .btn" ).removeClass("active");
 		$(this).addClass("active");
 	});
+
+	$( "#help-button" ).hover(
+		function() {
+			$( ".help" ).fadeTo(300, 1)
+		},
+		function() {
+			$( ".help" ).fadeTo(300, 0);
+		}
+	);
 </script>
 
 <script src="js/province-time.js"></script>

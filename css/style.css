@@ -23,6 +23,7 @@ body {
 .chart-wrapper {
 	padding: 10px;
 	margin-left: 50px;
+	margin-right: 25px;
 }
 
 #chart-title {
@@ -43,4 +44,51 @@ rect {
 
 .nvtooltip table td.legend-color-guide div {
 	border: none;
+}
+
+#header {
+	width: 100%;
+	background-color: #efefef;
+	border-bottom: 3px solid #ccc;
+}
+
+#explainer-stacked, #explainer-bubbles {
+	margin-bottom: 0;
+}
+
+#overlay {
+	height: 100%;
+	width: 100%;
+	z-index: 1000;
+	background-color: #fff;
+	position: absolute;
+}
+
+.hide-scrollbar {
+	overflow: hidden;
+	height: 100%;
+}
+
+.no-margin-bottom {
+	margin-bottom: 0;
+}
+
+#help-button {
+	cursor: help;
+}
+
+.help {
+	font-size: .8rem;
+	color: #373a3c;
+	pointer-events: none;
+}
+
+.scroll-down {
+	position:absolute;
+	border: 1px solid #fff;
+	bottom: 40px;
+	left: 50%;
+	transform: translate(-50%, 0);
+	font-size: .8rem;
+	color: #373a3c;
 }
