@@ -5,6 +5,9 @@ function monthTime() {
 		chart.reduceXTicks(false)
 		chart.yAxis.axisLabel('Average number of minutes per day')
 		chart.yAxis.axisLabelDistance(-10);
+    if ($(window).width() <=800) {
+      chart.staggerLabels(true);
+    };
 	;
 
 	d3.select('#chart svg').datum([

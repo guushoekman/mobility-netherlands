@@ -6,6 +6,9 @@ function educationTime() {
 		chart.yAxis.axisLabel('Average number of minutes per day')
 		chart.yAxis.axisLabelDistance(-10);
 		chart.xAxis.axisLabel('Level of education')
+		if ($(window).width() <=400) {
+		  chart.staggerLabels(true);
+		};
 	;
 
 	d3.select('#chart svg').datum([
@@ -93,4 +96,6 @@ function educationTime() {
 	]).transition().duration(500).call(chart);
 
 	$('#chart-title').html('<h4>Minutes per day by education level <div class="btn-group" role="group"><button onclick="educationTime()" type="button" class="btn btn-sm btn-secondary active"><i class="fa fa-clock-o" aria-hidden="true"></i> Time</button><button onclick="educationDistance()" type="button" class="btn btn-sm btn-secondary"><i class="fa fa-road" aria-hidden="true"></i> Distance</button></div></h4>');
+
+	$('#chart-definitions').html('<p>The following definitions include accronyms from the Dutch educational system and may require <a href="https://en.wikipedia.org/wiki/Education_in_the_Netherlands" target="_blank">additional reading</a>.</p><p>Low education level: basic education, VMBO, the first three years of HAVO/VWO, or an assistant degree (MBO-1)<br>Middle education level: last two years of HAVEO, last three years of VWO, a basic professional degree (MBO-2), trade degree (MBO-3), or middle and specialist degree (MBO-4)<br>High education level: HBO or WO</p>');
 }

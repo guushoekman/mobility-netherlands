@@ -5,7 +5,10 @@ function incomeDistance() {
 		chart.reduceXTicks(false)
 		chart.yAxis.axisLabel('Average number of kilometres per day')
 		chart.yAxis.axisLabelDistance(-10);
-    chart.xAxis.axisLabel('🡠 less disposable income || more disposable income 🡢')
+    chart.xAxis.axisLabel('🡠 less disposable income || more disposable income 🡢');
+    if ($(window).width() <=575) {
+      chart.staggerLabels(true);
+    };
 	;
 
 	d3.select('#chart svg').datum([
@@ -110,4 +113,5 @@ function incomeDistance() {
 
   $('#chart-title').html('<h4>Kilometres per day by disposable income <div class="btn-group" role="group"><button onclick="incomeTime()" type="button" class="btn btn-sm btn-secondary"><i class="fa fa-clock-o" aria-hidden="true"></i> Time</button><button onclick="incomeDistance()" type="button" class="btn btn-sm btn-secondary active"><i class="fa fa-road" aria-hidden="true"></i> Distance</button></div></h4>');
 
+  $('#chart-definitions').html('<p>Disposable income is equal to gross income minus welfare benefits, premiums for income insurance, health insurance, and taxes on income and assets. Households are divided into five groups with an equal number of households. The income ranges of these groups change each year.</p>');
 }

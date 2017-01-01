@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="favicon.png" rel="shortcut icon" />
 
 <html>
 <head>
@@ -13,7 +14,7 @@
 <body>
 	<div id="header">
 		<div class="chart-wrapper">
-			<h1 class="no-margin-bottom">Mobility in the Netherlands</h1>
+			<h2 class="no-margin-bottom">Mobility in the Netherlands</h2>
 		</div>
 	</div>
 	<div id="chart-content">
@@ -31,20 +32,19 @@
 			  <button type="button" class="btn btn-sm btn-secondary" onclick="monthTime()"><i class="fa fa-calendar" aria-hidden="true"></i> Month</button>
 			</div>
 		  <div id="chart-title"></div>
-		  <div style="opacity: 0;" class="help">
+		  <div class="help">
 			  <div class="pull-left"><i class="fa fa-arrow-down" aria-hidden="true"></i> Click to re-arrange bars</div>
 			  <div class="pull-right"><i class="fa fa-arrow-down" aria-hidden="true"></i> Click to add/remove mode of transport. Double click to remove the rest</div>
-			  <div class="scroll-down btn-sm btn btn-secondary"><i class="fa fa-arrow-down" aria-hidden="true"></i> Scroll down for notes, definitions, and sources</div>
+			  <div class="scroll-down"><i class="fa fa-arrow-down" aria-hidden="true"></i> Scroll down for notes, definitions, and sources</div>
 		  </div>
 		</div>
 		<div id="chart">
 			<svg></svg>
 		</div>
-		<div class="chart-wrapper" id="chart-definitions">
+		<div class="chart-wrapper">
 			<h3>Notes and definitons</h3>
-			<p>
-				Data on moped, train, bus/tram/metro, and other forms of transport usage is missing for a number of provinces.
-			</p>
+			<div id="chart-definitions">
+			</div>
 		</div>
 	</div>
 </body>
@@ -61,10 +61,10 @@
 
 	$( "#help-button" ).hover(
 		function() {
-			$( ".help" ).fadeTo(300, 1)
+			$( ".help" ).fadeTo(200, 1)
 		},
 		function() {
-			$( ".help" ).fadeTo(300, 0);
+			$( ".help" ).fadeTo(200, 0);
 		}
 	);
 </script>

@@ -5,7 +5,10 @@ function ageDistance() {
 		chart.reduceXTicks(false)
 		chart.yAxis.axisLabel('Average number of kilometres per day')
 		chart.yAxis.axisLabelDistance(-10);
-    chart.xAxis.axisLabel('age in years')
+    chart.xAxis.axisLabel('age in years');
+    if ($(window).width() <=450) {
+      chart.staggerLabels(true);
+    };
 	;
 
 	d3.select('#chart svg').datum([

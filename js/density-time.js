@@ -5,6 +5,9 @@ function densityTime() {
 		chart.reduceXTicks(false)
 		chart.yAxis.axisLabel('Average number of minutes per day')
 		chart.yAxis.axisLabelDistance(-10);
+		if ($(window).width() <=575) {
+		  chart.staggerLabels(true);
+		};
 	;
 
 	d3.select('#chart svg').datum([
@@ -107,5 +110,7 @@ function densityTime() {
 	
 	]).transition().duration(500).call(chart);
 
-$('#chart-title').html('<h4>Minutes per day by population density <div class="btn-group" role="group"><button onclick="densityTime()" type="button" class="btn btn-sm btn-secondary active"><i class="fa fa-clock-o" aria-hidden="true"></i> Time</button><button onclick="densityDistance()" type="button" class="btn btn-sm btn-secondary"><i class="fa fa-road" aria-hidden="true"></i> Distance</button></div></h4>');
+	$('#chart-title').html('<h4>Minutes per day by population density <div class="btn-group" role="group"><button onclick="densityTime()" type="button" class="btn btn-sm btn-secondary active"><i class="fa fa-clock-o" aria-hidden="true"></i> Time</button><button onclick="densityDistance()" type="button" class="btn btn-sm btn-secondary"><i class="fa fa-road" aria-hidden="true"></i> Distance</button></div></h4>');
+
+	$('#chart-definitions').html('<dl class="row"><p class="col-xs-12">Density is assigned to every neighbourhood or municipality based of the number of addresses within a circle with a radius of 1 kilometre divided by the area of that circle. The density is expressed in km<sup>2</sup>.</p><dt class="col-sm-3">Very strongly urban</dt><dd class="col-sm-9">2500 or more addresses per km<sup>2</sup></dd><dt class="col-sm-3">Strongly urban</dt><dd class="col-sm-9">Between 1500 and 2500 addresses per km<sup>2</sup></dd><dt class="col-sm-3">Moderately urban</dt><dd class="col-sm-9">Between 1000 and 1500 addresses per km<sup>2</sup></dd><dt class="col-sm-3">Little urban</dt><dd class="col-sm-9">Between 500 and 1000 addresses per km<sup>2</sup></dd><dt class="col-sm-3">Not urban</dt><dd class="col-sm-9">500 or fewer addresses per km<sup>2</sup></dd>');
 }

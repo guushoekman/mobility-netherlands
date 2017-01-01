@@ -26,6 +26,22 @@ body {
 	margin-right: 25px;
 }
 
+@media(max-width:992px) {
+	.chart-wrapper {
+		padding: 10px;
+		margin-left: 15px;
+		margin-right: 15px;
+	}
+}
+
+@media(max-width:768px) {
+	.chart-wrapper {
+		padding: 10px;
+		margin-left: 5px;
+		margin-right: 5px;
+	}
+}
+
 #chart-title {
 	margin-bottom: 0px;
 	margin-top: 15px;
@@ -52,18 +68,6 @@ rect {
 	border-bottom: 3px solid #ccc;
 }
 
-#explainer-stacked, #explainer-bubbles {
-	margin-bottom: 0;
-}
-
-#overlay {
-	height: 100%;
-	width: 100%;
-	z-index: 1000;
-	background-color: #fff;
-	position: absolute;
-}
-
 .hide-scrollbar {
 	overflow: hidden;
 	height: 100%;
@@ -79,16 +83,25 @@ rect {
 
 .help {
 	font-size: .8rem;
-	color: #373a3c;
+	color: #fff;
 	pointer-events: none;
+	opacity: 0;
 }
 
 .scroll-down {
 	position:absolute;
-	border: 1px solid #fff;
-	bottom: 40px;
+	bottom: 15%;
 	left: 50%;
 	transform: translate(-50%, 0);
-	font-size: .8rem;
-	color: #373a3c;
+}
+
+.help div {
+	background-color: #373a3c;
+	padding: 1px 4px;
+	border-radius: 3px;
+}
+
+.help-page img {
+	max-width: 100%;
+	margin-bottom: 5px;
 }

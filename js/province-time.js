@@ -5,7 +5,10 @@ function provinceTime() {
 		chart.reduceXTicks(false)
 		chart.yAxis.axisLabel('Average number of minutes per day')
 		chart.yAxis.axisLabelDistance(-10);
-	;
+    if ($(window).width() <=1120) {
+      chart.staggerLabels(true);
+    };
+  ;
 
 	d3.select('#chart svg').datum([
 	{   
@@ -172,4 +175,6 @@ function provinceTime() {
 	]).transition().duration(500).call(chart);
 
 	$('#chart-title').html('<h4>Minutes per day by province <div class="btn-group" role="group"><button onclick="provinceTime()" type="button" class="btn btn-sm btn-secondary active"><i class="fa fa-clock-o" aria-hidden="true"></i> Time</button><button onclick="provinceDistance()" type="button" class="btn btn-sm btn-secondary"><i class="fa fa-road" aria-hidden="true"></i> Distance</button></div></h4>');
+
+  $('#chart-definitions').html('<p>   Data on moped, train, bus/tram/metro, and other forms of transport usage is missing for a number of provinces.</p>');
 }
