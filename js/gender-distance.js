@@ -5,6 +5,8 @@ function genderDistance() {
 		chart.reduceXTicks(false)
 		chart.yAxis.axisLabel('Average number of kilometres per day')
 		chart.yAxis.axisLabelDistance(-10);
+		chart.yAxis.tickFormat(d3.format(".2s"));
+		chart.tooltip.valueFormatter(function (d) { return d > 0 ? d : 0; });
 	;
 
 	d3.select('#chart svg').datum([
