@@ -115,5 +115,5 @@ function incomeTime() {
 
   $('#chart-title').html('<h4>Minutes per day by disposable income <div class="btn-group" role="group"><button onclick="incomeTime()" type="button" class="btn btn-sm btn-secondary active"><i class="fa fa-clock-o" aria-hidden="true"></i> Time</button><button onclick="incomeDistance()" type="button" class="btn btn-sm btn-secondary"><i class="fa fa-road" aria-hidden="true"></i> Distance</button></div></h4>');
 
-  $('#chart-definitions').html('<p>Disposable income is equal to gross income minus welfare benefits, premiums for income insurance, health insurance, and taxes on income and assets. Households are divided into five groups with an equal number of households. The income ranges of these groups change each year.</p>');
+  $('#chart-definitions').html('<h3>Notes and definitons</h3><p>Disposable income is equal to gross income minus welfare benefits, premiums for income insurance, health insurance, and taxes on income and assets. Households are divided into five groups with an equal number of households. The income ranges of these groups change each year.</p>');
 }

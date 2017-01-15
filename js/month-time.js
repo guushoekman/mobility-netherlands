@@ -169,4 +169,6 @@ function monthTime() {
 	]).transition().duration(500).call(chart);
 
 	$('#chart-title').html('<h4>Minutes per day by month <div class="btn-group" role="group"><button onclick="monthTime()" type="button" class="btn btn-sm btn-secondary active"><i class="fa fa-clock-o" aria-hidden="true"></i> Time</button><button onclick="monthDistance()" type="button" class="btn btn-sm btn-secondary"><i class="fa fa-road" aria-hidden="true"></i> Distance</button></div></h4>');
+
+  $('#chart-definitions').html('');
 }

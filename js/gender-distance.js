@@ -87,4 +87,6 @@ function genderDistance() {
 
   $('#chart-title').html('<h4>Kilometres per day by gender <div class="btn-group" role="group"><button onclick="genderTime()" type="button" class="btn btn-sm btn-secondary"><i class="fa fa-clock-o" aria-hidden="true"></i> Time</button><button onclick="genderDistance()" type="button" class="btn btn-sm btn-secondary active"><i class="fa fa-road" aria-hidden="true"></i> Distance</button></div></h4>');
 
+  $('#chart-definitions').html('');
+
 }

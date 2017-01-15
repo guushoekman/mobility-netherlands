@@ -178,5 +178,5 @@ function provinceDistance() {
 
 	$('#chart-title').html('<h4>Kilometres per day by province <div class="btn-group" role="group"><button onclick="provinceTime()" type="button" class="btn btn-sm btn-secondary"><i class="fa fa-clock-o" aria-hidden="true"></i> Time</button><button onclick="provinceDistance()" type="button" class="btn btn-sm btn-secondary active"><i class="fa fa-road" aria-hidden="true"></i> Distance</button></div></h4>');
 
-	$('#chart-definitions').html('<p>	Data on moped, train, bus/tram/metro, and other forms of transport usage is missing for a number of provinces.</p>');
+	$('#chart-definitions').html('<h3>Notes and definitons</h3><p>Data on moped, train, bus/tram/metro, and other forms of transport usage is missing for a number of provinces.</p>');
 }
